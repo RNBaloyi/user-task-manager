@@ -20,11 +20,9 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: |
-          cd backend
-          npm install
+        run: npm install
+        working-directory: ./backend
 
       - name: Run tests
-        run: |
-          cd backend
-          npx jest
+        run: npx --no-install jest
+        working-directory: ./backend
